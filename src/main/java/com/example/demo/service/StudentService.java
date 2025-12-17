@@ -14,12 +14,10 @@ public class StudentServices {
 
     private Map<Integer, Studententity> details = new HashMap<>();
 
-
     public Studententity saveData(Studententity st) {
         details.put(st.getId(), st);
         return st;
     }
-
 
     public Studententity getStudent(int id) {
         return details.get(id);

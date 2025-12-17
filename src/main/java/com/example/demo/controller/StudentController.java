@@ -9,30 +9,28 @@ import com.example.demo.entity.Studententity;
 import com.example.demo.service.StudentServices;
 
 @RestController
+@RequestMapping("/students")
 public class Studclt {
 
     @Autowired
     private StudentServices ser;
 
-    
-    @PostMapping("/Postadd")
+    @PostMapping
     public Studententity saveData(@RequestBody Studententity st) {
         return ser.saveData(st);
     }
 
-    @GetMapping("/Getadd/{id}")
+    @GetMapping("/{id}")
     public Studententity getStudent(@PathVariable int id) {
         return ser.getStudent(id);
     }
 
-    
-    @GetMapping("/GetAll")
+    @GetMapping
     public List<Studententity> getAllStudents() {
-        return ser.getStudents();
+        return ser.getAllStudents();
     }
 
-  
-    @PutMapping("/Update/{id}")
+    @PutMapping("/{id}")
     public Studententity updateStudent(
             @PathVariable int id,
             @RequestBody Studententity st) {
