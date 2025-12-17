@@ -4,23 +4,30 @@ public class Studententity{
     private int id;
     private String name;
     private String email;
-    public void getId(){
+
+    constructor(int id,String name,String email){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
+    public int getId(){
         return id;
     }
-    public void serId(){
+    public void setId(){
         this.id=id;
     }
-    public void getId(){
-        return id;
+    public String getName(){
+        return name;
     }
-    public void serId(){
-        this.id=id;
+    public void setName(){
+        this.name=name;
     }
-    public void getId(){
-        return id;
+    public String getEmail(){
+        return email;
     }
-    public void serId(){
-        this.id=id;
+    public void setEmail(){
+        this.email=email;
     }
 
 }
