@@ -1,33 +1,51 @@
 package com.example.demo.entity;
 
-public class Studententity{
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "student")
+public class Studententity {
+
+    @Id
     private int id;
     private String name;
     private String email;
 
-    constructor(int id,String name,String email){
+    // ✅ NO-ARG CONSTRUCTOR (REQUIRED)
+    public Studententity() {
+    }
+
+    // ✅ PARAMETERIZED CONSTRUCTOR
+    public Studententity(int id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    public int getId(){
+    // ✅ GETTERS & SETTERS
+    public int getId() {
         return id;
     }
-    public void setId(){
-        this.id=id;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setName(){
-        this.name=name;
-    }
-    public String getEmail(){
-        return email;
-    }
-    public void setEmail(){
-        this.email=email;
+
+    public void setId(int id) {
+        this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
