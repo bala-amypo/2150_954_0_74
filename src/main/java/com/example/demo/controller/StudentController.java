@@ -14,25 +14,24 @@ public class Studclt {
     @Autowired
     private StudentServices ser;
 
-    // CREATE
+    
     @PostMapping("/Postadd")
     public Studententity saveData(@RequestBody Studententity st) {
         return ser.saveData(st);
     }
 
-    // READ by ID
     @GetMapping("/Getadd/{id}")
     public Studententity getStudent(@PathVariable int id) {
         return ser.getStudent(id);
     }
 
-    // READ ALL
+    
     @GetMapping("/GetAll")
     public List<Studententity> getAllStudents() {
         return ser.getStudents();
     }
 
-    // UPDATE
+  
     @PutMapping("/Update/{id}")
     public Studententity updateStudent(
             @PathVariable int id,
