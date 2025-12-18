@@ -12,7 +12,7 @@ import com.example.demo.entity.UserEntity;
 @Service
 public class UserService {
 
-    Map<long, UserEntity> store = new HashMap<>();
+    Map<Long, UserEntity> store = new HashMap<>();
 
     public UserEntity add(UserEntity st) {
         store.put(st.getId(), st);
@@ -20,8 +20,6 @@ public class UserService {
     }
 
     public List<UserEntity> getall() {
-
         return new ArrayList<>(store.values());
-
     }
 }
